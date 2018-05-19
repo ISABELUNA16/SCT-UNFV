@@ -1,0 +1,13 @@
+login_homepage:
+    path:     /
+    defaults: { _controller: LoginBundle:Default:index }
+
+login_usuarioPrincipal:
+    path:     /usuarioPrincipal
+    defaults: { _controller: LoginBundle:Default:usuarioPrincipal }
+
+login_administtradorPrincipal:
+    path:     /administradorPrincipal
+    defaults: { _controller: LoginBundle:Default:administradorPrincipal }
+    
+

@@ -1,0 +1,221 @@
+
+{% extends '::base.html.twig' %}
+{% block title %}SCT UNFV{% endblock %}
+{% block body %}
+<header>
+    <nav style="background:#0B0B3B; border-color:#0B0B3B" class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <a style=" font: message-box; font-size:18px; margin-top:5px"class="navbar-brand" href="#">Sistema de Control Técnico </a>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+          	<li style=" font: message-box;"><a><i class="btn icon-user" style="font-size:1.2em; color:white" ></i> Bienvenido: kevin Hablutzel  | <i class="btn icon-info" style="font-size:1.2em; color:white"></i>Perfil : Administrador</a></li>
+          	<li title="Cerrar sesión"><a href=""><i class="btn icon-logout" style="font-size:1.2em; color:white" ></i></a></li>
+          </ul>
+        
+        </div>
+      </div>
+    </nav>
+</header>
+
+<section class="proceso-inscripcion">
+	
+	<div class="container text-center" style="margin-top: 10px; margin-bottom: 30px;">
+		<div id="alert-info" class="alert alert-warning alert-dismissible text-center" role="alert" style="margin-top: 10px; margin-bottom: 20px;">
+		<button id="btn-close-alert-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+			<p> Visualiza los requerimientos que realizaste, dale seguimiento y solicita nuevos requerimientos reportando cualquier incidencia que se presente.  </p>
+		</div>
+
+		<h4 style="color:grey; margin-left:40px" class="text-left"><strong> RECEPCION DE INCIDENCIAS </strong> >>  Listado de solicitudes  </h4>
+		<hr>
+
+		<div id="ficha-participante-container" class="container-card col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="card">
+				<div class="card-body">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="input-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
+								 	<span class="input-group-addon" style="background:#0B3861; color:white">Buscar</span>
+								  	<input class="filtrar form-control" type="text"  placeholder=" Ingresa los campos a buscar ">
+								</div>
+								<br>
+								<div class="panel panel-default" style="overflow-x:auto;">
+									<table class="table"> 
+										<thead style="background:#0B3861; color:white; font: message-box;"> 
+											<tr>
+												<th class="text-center">Cod-Req</th>
+												<th class="text-center">Descripción</th>
+												<th class="text-center">Área</th>
+												<th class="text-center">Usuario emisor</th> 
+												<th class="text-center">Fecha de solicitud</th>
+												<th class="text-center">Técnico asignado</th> 
+												<th class="text-center">Estado</th> 
+												<th class="text-center"  colspan="2">Acciones</th> 
+											</tr>
+										</thead> 
+										<tbody class="buscar" id="seguimientoData" style="color:#494343"> 
+												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
+													<td>REQ-231</td>
+													<td>No enciende la Pc. </td>
+													<td>ADMINISTRATIVA</td>
+													<td>Rosmery Luna</td>
+													<td>19/05/2018</td>
+													<td>No derivado</td>
+													<td><button type="button" class="btn btn-default" disabled><div class="circle-red"></div></button></td>
+													<td><button type="button" class="btn btn-primary" >Derivar</button></td>
+													<td><button type="button" class="btn btn-warning" disabled>Finalizar</button></td>	
+												</tr>
+
+												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
+													<td>REQ-235</td>
+													<td>Se visualiza la pantalla negra. </td>
+													<td>ADMINISTRATIVA</td>
+													<td>Adam Marquina</td>
+													<td>19/05/2018</td>
+													<td>Carlos Portal</td>
+													<td><button type="button" class="btn btn-default" disabled><div class="circle-amarillo"></div></button></td>
+													<td><button type="button" class="btn btn-primary" disabled>Derivar</button></td>
+													<td><button type="button" class="btn btn-warning" >Finalizar</button></td>	
+												</tr>
+
+												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
+													<td>REQ-236</td>
+													<td>Problemas con la impresora. </td>
+													<td>ADMINISTRATIVA</td>
+													<td>Adam Marquina</td>
+													<td>19/05/2018</td>
+													<td>Ronald </td>
+													<td><button type="button" class="btn btn-default" disabled><div class="circle-verde"></div></button></td>
+													<td><button type="button" class="btn btn-primary" disabled>Derivar</button></td>
+													<td><button type="button" class="btn btn-warning" disabled>Finalizar</button></td>	
+												</tr>
+											
+										</tbody> 
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+
+</section>
+
+<footer class="footer" style="background-color:black;">  
+	<br>   
+	<div class="container">         
+		<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">&copy; 2018 Todos los derechos reservados | Sistema de Control Técnico UNFV</p>    
+	</div>
+	<br> 
+</footer>
+
+<div id="modal-nuevaIncidencia" class="modal fade" role="dialog">
+	<div class=" modal-dialog modal-lg">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close text-center" data-dismiss="modal">&times;</button>
+				<p class="title-card" style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px">FORMATO DE REQUERIMIENTO PARA REPORTAR INCIDENCIAS</p>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="alert-crear-info" class="alert alert-warning alert-dismissible text-center" role="alert">
+							<button id="btn-close-alert-crear-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+							<p style="font-size:14px">Llena todos los datos solicitados. </p>
+						</div>
+						<div id="alerta-errorCrear" class="alert alert-danger collapse text-center"></div>
+
+						<ul class="list-group">
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>DATOS DEL USUARIO</strong></p>
+									</div> 
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 " >
+										<br>
+										<p style="font-size:14px; color:grey"><strong>USUARIO :</strong> <span> Rosmery Isabel Luna Tito</span></p>
+										<p style="font-size:14px; color:grey"><strong>ÁREA : </strong><span> ADMINISTRATIVA</span></p>
+										<p style="font-size:14px; color:grey"><strong>CARGO :</strong> <span> SECRETARIA </span></p>
+										
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+										<p><strong>INCIDENCIA</strong></p>
+									</div>
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+										<select class="form-control" id="">
+											<option value="">--Seleccionar--</option>
+											<option value="0">INC-12 | No enciende el monitor</option>
+											<option value="1">INC 13 | Pc no enciende</option>
+											<option value="1">INC 14 | Se reinicia la pc</option>
+											<option value="1">INC 15 | Enciende en pantalla negra</option>
+											<option value="1">INC 16 | Fallas en el monitor</option>
+											<option value="1">INC 17 | Falla placa de video</option>
+											<option value="1">INC 26 | Falla memoria RAM</option>
+											<option value="1">INC 27 | Falla de disco duro</option>
+											<option value="1">Otros tipos de incidencias . </option>
+
+										</select>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										<textarea class="form-control" rows="3" placeholder=" Observación: "></textarea>
+									</div>
+								</div>
+							</li>				
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button id="btn-crear-horario" type="button" class="btn btn-danger" >Enviar Solicitud</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script src="{{asset('assets/vendor/jquery/dist/jquery.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+
+<script type="text/javascript">
+
+	
+	$('.opciones').on('click', function(){
+		toggle(this)
+	})
+	
+	function toggle(tableid){
+	  var id = jQuery(tableid).data('id')
+	  jQuery('#Tabla_Mostrar'+id).toggle();
+	}
+
+
+
+
+</script>
+
+
+{% endblock %}

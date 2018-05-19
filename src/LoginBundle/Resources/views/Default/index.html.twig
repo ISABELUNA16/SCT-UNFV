@@ -1,0 +1,103 @@
+{% extends '::base.html.twig' %}
+{% block title %} SCT UNFV{% endblock %}
+{% block body %}
+
+<header >
+ 	<nav style="background:black; border-color:black" class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                                                          
+            </div>
+        </div>
+    </nav>
+</header>
+					
+<section style="background:#E6E6E6;">
+	<br><br>
+	<div id="" class="proceso">
+		<div class="container-card col-xs-10 col-sm-8 col-md-4 col-ld-3" style="background-color: transparent;">
+			<div class="card" style="background-color:white; margin-top:60px; margin-bottom: 100px; padding: 20px;">
+			  	<center><img src="{{ asset('assets/images/icono.PNG') }}" class="img-responsive"  style="width:70px;" alt="logoSCT" />	</center>
+				<h1 class="title-card text-center" style="color: #08298A">Sistema de Control Técnico</h1>
+				<hr>
+				<div id="alert-info" class="alert alert-warning alert-dismissible" role="alert">
+					<button id="btn-close-alert-info" class="close"><span aria-hidden="true">&times;</span></button>
+					<strong>Acceso sólo para personal autorizado</strong>
+					<p>Ingrese al sistema con sus credenciales asignadas.</p>
+				</div>
+				<form action="" method="POST">
+					<input type="text" class="form-control" placeholder="Usuario" required autofocus>
+	                <input type="password" class="form-control" placeholder="Contraseña" required>
+	                <br>
+	               <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Iniciar sesión</button>
+		            <label class="checkbox pull-left" style="margin-left: 20px;">
+	                    <input type="checkbox" value="remember-me" >
+	                    Remember me
+	                </label>
+                	<br>
+                	<a href="#" class="pull-right need-help">Necesitas ayuda? </a><span class="clearfix"></span>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+
+
+	
+</section>
+{% endblock %}
+{% block javascripts %}
+	<!-- scripts -->
+	<script src="{{asset('assets/vendor/jquery/dist/jquery.js')}}"></script>
+	<script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.js')}}"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$("#input-usuario").val('');
+
+			$('#btn-login').click(function(){
+
+				if ($("#input-usuario").val() == '' && $("#input-contraseña").val() == '') {
+					showAlertMessage('#alerta', "Usuario y/o contraseña incorrectos")
+				}
+			});
+
+			$('#btn-close-alert-info').click(function(){
+				hideAlertMessage("#alert-info");
+			});
+
+		});
+
+		/*Muestra mensaje de alerta*/
+		function showAlertMessage(alert, mensaje){
+			$(alert).text(mensaje).show('fade');
+			setTimeout(function(){
+				hideAlertMessage(alert);	
+			}, 3000);
+		}
+
+		/*Oculta mensaje de alerta*/
+		function hideAlertMessage(alert){
+			$(alert).hide('fade');		
+		}
+		
+		$("#btn-login").on('click',function(){
+
+			var usuario = $("#username").val();
+			console.log("user: "+ usuario);
+
+
+		});
+
+	</script>
+
+
+
+{% endblock %}
