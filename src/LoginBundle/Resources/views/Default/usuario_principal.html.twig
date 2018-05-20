@@ -16,7 +16,7 @@
     
         <div class="collapse navbar-collapse" id="navbar-collapse-3">
           <ul class="nav navbar-nav navbar-right">
-          	<li style=" font: message-box;"><a><i class="btn icon-user" style="font-size:1.2em; color:white" ></i> Bienvenido: Rosmery Luna | <i class="btn icon-info" style="font-size:1.2em; color:white"></i>Perfil : Usuario</a></li>
+          	<li><a  style=" font-size:14px; font: message-box"><i class="btn icon-user" style="font-size:1.1em; color:white" ></i> Bienvenido: Rosmery Luna | <i class="btn icon-info" style="font-size:1.2em; color:white"></i>Perfil : Usuario</a></li>
           	<li title="Cerrar sesión"><a href=""><i class="btn icon-logout" style="font-size:1.2em; color:white" ></i></a></li>
           </ul>
         
@@ -39,102 +39,106 @@
 		<div id="ficha-participante-container" class="container-card col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="card">
 				<div class="card-body">
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<div class="container-boton-3 text-right">
-				                    <button  type="button" data-toggle="modal" data-target="#modal-nuevaIncidencia" id="nueva-incidencia" class="btn btn-primary" id="boton3"> <strong> + </strong>Reportar nueva incidencia  </button>
-				                </div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="container-boton-3 text-right">
+			                    <button  type="button" data-toggle="modal" data-target="#modal-nuevaIncidencia" id="nueva-incidencia" class="btn btn-primary" id="boton3"> <strong> + </strong>Reportar nueva incidencia  </button>
+			                </div>
 
-								<div class="input-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
-								 	<span class="input-group-addon" style="background:#0B3861; color:white">Buscar</span>
-								  	<input class="filtrar form-control" type="text"  placeholder=" Ingresa los campos a buscar ">
-								</div>
+							<div class="input-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
+							 	<span class="input-group-addon" style="background:#0B3861; color:white">Buscar</span>
+							  	<input class="filtrar form-control" type="text"  placeholder=" Ingresa los campos a buscar ">
+							</div>
 
-								<br>
-								<div class="panel panel-default" style="overflow-x:auto;">
-									<table class="table"> 
-										<thead style="background:#0B3861; color:white; font: message-box;"> 
-											<tr> 
-												<th></th>
-												<th class="text-center">Cod-Req</th>
-												<th class="text-center">Descripción</th> 
-												<th class="text-center">Fecha de solicitud</th>
-												<th class="text-center">Técnico asignado</th> 
-												<th class="text-center">Estado</th> 
+							<br>
+							<div class="panel panel-default" style="overflow-x:auto;">
+								<table class="table"> 
+									<thead style="background:#0B3861; color:white; font: message-box;"> 
+										<tr> 
+											<th></th>
+											<th class="text-center">Cod-Req</th>
+											<th class="text-center">Descripción</th> 
+											<th class="text-center">Fecha de solicitud</th>
+											<th class="text-center">Técnico asignado</th> 
+											<th class="text-center">Fecha de atención</th> 
+											<th class="text-center">Estado</th> 
+										</tr>
+									</thead> 
+
+									<tbody class="buscar" id="seguimientoData" style="color:#494343"> 
+
+											<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
+												<td><button type="button" class="btn btn-default"><i class="icon-plus-square" style="font-size:1.2em; margin-top:5px;" ></i></button></td>
+												<td>REQ-231</td>
+												<td>No enciende la Pc. </td>
+												<td>19/05/2018</td>
+												<td>Kevin Hablutzel Pipa</td>
+												<td>19/05/2018</td>
+												<td><button type="button" class="btn btn-default" disabled><div class="circle-amarillo"></div></button></td>	
 											</tr>
-										</thead> 
-
-										<tbody class="buscar" id="seguimientoData" style="color:#494343"> 
-
-												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
-													<td><button type="button" class="btn btn-default"><i class="icon-plus-square" style="font-size:1.2em; margin-top:5px;" ></button></td>
-													<td>REQ-231</td>
-													<td>No enciende la Pc. </td>
-													<td>19/05/2018</td>
-													<td>Kevin Hablutzel Pipa</td>
-													<td><button type="button" class="btn btn-default" disabled><div class="circle-amarillo"></div></button></td>	
-												</tr>
-												<tr id="Mostrar_Tabla3" data-id="3" class="opciones">
-													<td><button type="button" id="mas-info" class="btn btn-default"><i class="icon-plus-square" style="font-size:1.2em; margin-top:5px;" ></button></td>
-													<td>REQ-233</td>
-													<td>Fallas en el monitor.</td>
-													<td>19/05/2018</td>
-													<td>Adam Marquina Lacuaña</td>
-													<td><button type="button" class="btn btn-default" disabled><div class="circle-red"></div></button></td>	
-												</tr>	
-												<tr id="Tabla_Mostrar3">
-													<td colspan="6"> 
-														<div  class="alert alert-danger alert-dismissible" role="alert" style="margin-top: 10px; margin-bottom: 20px;">
-						                                	<button id="btn-close-alert-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
-						                                    <p>1.- El requerimiento está en proceso de evaluación.</p>
-						                                </div>
-                            						</td>
-												</tr>
-												<tr id="Mostrar_Tabla4" data-id="4" class="opciones">
-													<td><button type="button" class="btn btn-default"><i class="icon-plus-square" style="font-size:1.2em; margin-top:5px;" ></button></td>
-													<td>REQ-234</td>
-													<td>Fallas en el monitor.</td>
-													<td>19/05/2018</td>
-													<td>Adam Marquina Lacuaña</td>
-													<td><button type="button" class="btn btn-default" disabled><div class="circle-verde"></div></button></td>	
-												</tr>	
-												<tr id="Tabla_Mostrar4">
-													<td colspan="6"></td>
-												</tr>
-										</tbody> 
-									</table>
-								</div>
-
+											<tr id="Mostrar_Tabla3" data-id="3" class="opciones">
+												<td><button type="button" id="mas-info" class="btn btn-default"><i class="icon-plus-square" style="font-size:1.2em; margin-top:5px;" ></i></button></td>
+												<td>REQ-233</td>
+												<td>Fallas en el monitor.</td>
+												<td>19/05/2018</td>
+												<td>Adam Marquina Lacuaña</td>
+												<td>Pendiente</td>
+												<td><button type="button" class="btn btn-default" disabled><div class="circle-red"></div></button></td>	
+											</tr>	
+											<tr id="Tabla_Mostrar3">
+												<td colspan="6"> 
+													<div  class="alert alert-danger alert-dismissible" role="alert" style="margin-top: 10px; margin-bottom: 20px;">
+					                                	<button id="btn-close-alert-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+					                                    <p>1.- El requerimiento está en proceso de evaluación.</p>
+					                                </div>
+                        						</td>
+											</tr>
+											<tr id="Mostrar_Tabla4" data-id="4" class="opciones">
+												<td><button type="button" class="btn btn-default"><i class="icon-plus-square" style="font-size:1.2em; margin-top:5px;" ></i></button></td>
+												<td>REQ-234</td>
+												<td>Fallas en el monitor.</td>
+												<td>19/05/2018</td>
+												<td>Adam Marquina Lacuaña</td>
+												<td>19/05/2018</td>
+												<td><button type="button" class="btn btn-default" disabled><div class="circle-verde"></div></button></td>	
+											</tr>	
+											<tr id="Tabla_Mostrar4">
+												<td colspan="6"></td>
+											</tr>
+									</tbody> 
+								</table>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon alert-success">Atendidos</span>
-									<p id="inscritos-horario" class="form-control">1</p>
-								</div>
-							</div>
+						</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon alert-warning">En proceso</span>
-									<p id="asistentes-horario" class="form-control">1</p>
-								</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon alert-success">Atendidos</span>
+								<p id="inscritos-horario" class="form-control">1</p>
 							</div>
+						</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon alert-danger">Pendientes</span>
-									<p id="asistentes-horario" class="form-control">1</p>
-								</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon alert-warning">En proceso</span>
+								<p id="asistentes-horario" class="form-control">1</p>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon alert-danger">Pendientes</span>
+								<p id="asistentes-horario" class="form-control">1</p>
 							</div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
-
+	</div>
 </section>
 
 <footer class="footer" style="background-color:black;">  
@@ -158,7 +162,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div id="alert-crear-info" class="alert alert-warning alert-dismissible text-center" role="alert">
 							<button id="btn-close-alert-crear-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
-							<p style="font-size:14px">Llena todos los datos solicitados. </p>
+							<p style="font-size:14px">Selecciona una incidencia y detalla alguna observación presentada. </p>
 						</div>
 						<div id="alerta-errorCrear" class="alert alert-danger collapse text-center"></div>
 
@@ -181,7 +185,7 @@
 							<li class="list-group-item">
 								<div class="row">
 									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-										<p><strong>INCIDENCIA</strong></p>
+										<p  style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px"><strong>INCIDENCIA</strong></p>
 									</div>
 									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 										<select class="form-control" id="">

@@ -21,4 +21,9 @@ class DefaultController extends Controller
     	return $this->render('LoginBundle:Default:admin_principal.html.twig');
     }
 
+    public function reportesAction(){
+
+        return $this->render('LoginBundle:Default:reportes.html.twig');
+    }
+
 }

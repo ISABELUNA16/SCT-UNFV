@@ -9,5 +9,9 @@ login_usuarioPrincipal:
 login_administtradorPrincipal:
     path:     /administradorPrincipal
     defaults: { _controller: LoginBundle:Default:administradorPrincipal }
+
+login_reportes:
+    path:     /reportes
+    defaults: { _controller: LoginBundle:Default:reportes }
     
 

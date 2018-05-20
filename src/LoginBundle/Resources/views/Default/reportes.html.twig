@@ -1,0 +1,146 @@
+{% extends '::base.html.twig' %}
+{% block title %}SCT UNFV{% endblock %}
+{% block body %}
+<header>
+    <nav style="background:#0B0B3B; border-color:#0B0B3B" class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <a style=" font: message-box; font-size:18px; margin-top:5px"class="navbar-brand" href="#">Sistema de Control Técnico </a>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+          	<li><a  style=" font-size:14px; font: message-box"><i class="btn icon-user" style="font-size:1.1em; color:white" ></i> Bienvenido: Kevin Hablutzel Pipa | <i class="btn icon-info" style="font-size:1.2em; color:white"></i>Perfil : Administrador</a></li>
+          	<li title="Cerrar sesión"><a href="{{url('login_homepage')}}"><i class="btn icon-logout" style="font-size:1.2em; color:white" ></i></a></li>
+          </ul>
+        
+        </div>
+      </div>
+    </nav>
+    <nav style="background:#545461; border-color:#37345F" class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Opciones</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+          	<li><a href="{{url('login_administtradorPrincipal')}}" style=" font-size:14px; font: message-box">Recepción de Incidencias |</a>	</li>
+          	<li><a style=" font-size:14px; font: message-box">Atenciones |</a></li>
+          	<li><a href="{{url('login_reportes')}}"  style=" font-size:14px; font: message-box">Reportes |</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</header>
+<section class="proceso-inscripcion">
+	
+	<div class="container text-center" style="margin-top: 10px; margin-bottom: 30px;">
+		<h4 style="color:grey; margin-left:40px" class="text-left"><strong> DESCARGAR REPORTES</strong> >>  Reportes de atenciones diarias  </h4>
+		<hr>
+		<div class="proceso">
+			<h4 style="color:grey">EXPORTACIÓN EN FORMATO CSV</h4>
+			<div class="proceso">
+					<div class="container-card col-xs-12 col-sm-8 col-md-6 col-lg-6">
+						<div class="card">	
+							<p class="title-card">Parámetros de exportación</p>
+							<div class="alert alert-success">
+								<button id="btn-close-alert-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+								<p>Puedes seleccionar cualquiera de los siguientes parámetros para exportar la data.</p>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Área</label>
+									<select class="form-control" id="select-mes" >
+										<option value="">--Seleccionar--</option>
+										<option value="">Administrativa</option>
+										<option value="">Docente</option>
+										<option value="">Técnica</option>
+									</select>
+								</div>
+								
+								<div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label>Técnico</label>
+									<select class="form-control" id="">
+										<option value="">--Seleccionar--</option>
+										<option value="0"> Kevin Hablutzel Pipa</option>
+										<option value="1"> Adam Marquina Lacuaña</option>
+										<option value="1"> Carlos Portal Bazan</option>
+										<option value="1"> Ronal Acuña</option>
+									</select>
+								</div>
+							</div>
+							<br>
+							<div class="row" >
+								<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<label>Incidencia</label>
+									<select class="form-control" id="">
+										<option value="">--Seleccionar--</option>
+										<option value="0">INC-12 | No enciende el monitor</option>
+										<option value="1">INC 13 | Pc no enciende</option>
+										<option value="1">INC 14 | Se reinicia la pc</option>
+										<option value="1">INC 15 | Enciende en pantalla negra</option>
+										<option value="1">INC 16 | Fallas en el monitor</option>
+										<option value="1">INC 17 | Falla placa de video</option>
+										<option value="1">INC 26 | Falla memoria RAM</option>
+										<option value="1">INC 27 | Falla de disco duro</option>
+										<option value="1">Otros tipos de incidencias . </option>
+									</select>
+								</div>
+							</div>
+							<br>
+							<div class="container-boton-1 text-center">
+								<button class="btn btn-danger" id="export-data"> Exportar CSV</button>
+							</div>
+						</div>		   
+					</div>
+				</div>
+		</div>
+
+	</div>
+</section>
+<footer class="footer" style="background-color:black;">  
+	<br>   
+	<div class="container">         
+		<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">&copy; 2018 Todos los derechos reservados | Sistema de Control Técnico UNFV</p>    
+	</div>
+	<br> 
+</footer>
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script src="{{asset('assets/vendor/jquery/dist/jquery.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+
+<script type="text/javascript">
+
+	
+	$('.opciones').on('click', function(){
+		toggle(this)
+	})
+	
+	function toggle(tableid){
+	  var id = jQuery(tableid).data('id')
+	  jQuery('#Tabla_Mostrar'+id).toggle();
+	}
+
+</script>
+
+
+{% endblock %}
