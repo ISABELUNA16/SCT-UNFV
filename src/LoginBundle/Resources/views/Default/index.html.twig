@@ -29,11 +29,13 @@
 					<strong>Acceso sólo para personal autorizado</strong>
 					<p>Ingrese al sistema con sus credenciales asignadas.</p>
 				</div>
+				<div id="alerta-error" class="alert alert-danger collapse text-center"></div>
+
 				<form action="" method="POST">
-					<input type="text" class="form-control" placeholder="Usuario" required autofocus>
-	                <input type="password" class="form-control" placeholder="Contraseña" required>
+					<input type="text" class="form-control" placeholder="Usuario" id="input-usuario" name="input-usuario"required autofocus>
+	                <input type="password" class="form-control" placeholder="Contraseña" id="input-contrasena" required>
 	                <br>
-	               <button class="btn btn-lg btn-primary btn-block" type="submit">
+	               <button class="btn btn-lg btn-primary btn-block" id="btn-login" name="btn-login" type="button">
                     Iniciar sesión</button>
 		            <label class="checkbox pull-left" style="margin-left: 20px;">
 	                    <input type="checkbox" value="remember-me" >
@@ -66,22 +68,32 @@
 
 	<script type="text/javascript">
 
-		$(document).ready(function(){
-
-			$("#input-usuario").val('');
-
+	
+			
 			$('#btn-login').click(function(){
+				
+				var usuario = $("#input-usuario").val();
+				console.log(usuario);
 
-				if ($("#input-usuario").val() == '' && $("#input-contraseña").val() == '') {
-					showAlertMessage('#alerta', "Usuario y/o contraseña incorrectos")
+				if ($("#input-usuario").val() != '' && $("#input-contrasena").val() != '') {
+					if ($("#input-usuario").val() == "isabel") {
+						
+						window.location.href = "{{url('login_usuarioPrincipal')}}";
+				
+					}else if($("#input-usuario").val() == 'kevin'){
+						window.location.href = "{{url('login_administtradorPrincipal')}}";
+						
+					}else if($("#input-usuario").val() == 'adam'){
+						window.location.href = "{{url('login_tecnicoPrincipal')}}";
+					}else{
+						showAlertMessage('#alerta-error', "Credenciales Incorrectas")
+					}
+				} else{
+					showAlertMessage('#alerta-error', "Ingrese todos los campos solicitados")
 				}
 			});
+		
 
-			$('#btn-close-alert-info').click(function(){
-				hideAlertMessage("#alert-info");
-			});
-
-		});
 
 		/*Muestra mensaje de alerta*/
 		function showAlertMessage(alert, mensaje){
@@ -95,14 +107,6 @@
 		function hideAlertMessage(alert){
 			$(alert).hide('fade');		
 		}
-		
-		$("#btn-login").on('click',function(){
-
-			var usuario = $("#username").val();
-			console.log("user: "+ usuario);
-
-
-		});
 
 	</script>
 

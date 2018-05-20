@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-3">
           <ul class="nav navbar-nav navbar-right">
           	<li><a  style=" font-size:14px; font: message-box"><i class="btn icon-user" style="font-size:1.1em; color:white" ></i> Bienvenido: Rosmery Luna | <i class="btn icon-info" style="font-size:1.2em; color:white"></i>Perfil : Usuario</a></li>
-          	<li title="Cerrar sesión"><a href=""><i class="btn icon-logout" style="font-size:1.2em; color:white" ></i></a></li>
+          	<li title="Cerrar sesión"><a href="{{url('login_homepage')}}"><i class="btn icon-logout" style="font-size:1.2em; color:white" ></i></a></li>
           </ul>
         
         </div>
@@ -36,6 +36,7 @@
 		<h4 style="color:grey; margin-left:40px" class="text-left"><strong> SEGUIMIENTO DE INCIDENCIAS </strong> >>  Requerimientos solicitados  </h4>
 		<hr>
 
+		
 		<div id="ficha-participante-container" class="container-card col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="card">
 				<div class="card-body">
@@ -46,8 +47,8 @@
 			                </div>
 
 							<div class="input-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
-							 	<span class="input-group-addon" style="background:#0B3861; color:white">Buscar</span>
-							  	<input class="filtrar form-control" type="text"  placeholder=" Ingresa los campos a buscar ">
+							 	<span class="input-group-addon" style="background:#0B3861; color:white" >Buscar</span>
+							  	<input class="form-control" type="text" placeholder=" Ingresa los campos a buscar ">
 							</div>
 
 							<br>
@@ -138,6 +139,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 </section>
 
@@ -232,7 +234,7 @@
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
 
 <script type="text/javascript">
-
+	
 	
 	$('.opciones').on('click', function(){
 		toggle(this)

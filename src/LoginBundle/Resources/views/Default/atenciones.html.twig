@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-2">
           <ul class="nav navbar-nav navbar-right">
           	<li><a href="{{url('login_administtradorPrincipal')}}" style=" font-size:14px; font: message-box">Recepción de Incidencias |</a>	</li>
-          	<li><a href="{{url('login_atencion')}}"style=" font-size:14px; font: message-box">Atenciones |</a></li>
+          	<li><a href="{{url('login_atencion')}}" style=" font-size:14px; font: message-box">Atenciones |</a></li>
           	<li><a href="{{url('login_reportes')}}"  style=" font-size:14px; font: message-box">Reportes |</a></li>
           </ul>
         </div>
@@ -55,7 +55,7 @@
 			<p> Visualiza los requerimientos que realizaste, dale seguimiento y solicita nuevos requerimientos reportando cualquier incidencia que se presente.  </p>
 		</div>
 
-		<h4 style="color:grey; margin-left:40px" class="text-left"><strong> RECEPCION DE INCIDENCIAS </strong> >>  Listado de solicitudes  </h4>
+		<h4 style="color:grey; margin-left:40px" class="text-left"><strong> RECEPCION DE INCIDENCIAS </strong> >>  Atenciones y levantamiento de Incidencias  </h4>
 		<hr>
 
 		<div id="ficha-participante-container" class="container-card col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -70,16 +70,16 @@
 								<br>
 								<div class="panel panel-default" style="overflow-x:auto;">
 									<table class="table table-striped table-bordered table-condensed"> 
-										<thead style="color: #0B3861"> 
+										<thead style="background:#0B3861; color:white"> 
 											<tr>
-												<th class="text-center">Cod. Req.</th>
-												<th class="text-center">Incidencia</th>
-												<th class="text-center">Área</th>
-												<th class="text-center">Usuario Emisor</th> 
-												<th class="text-center">Fecha Solicitud</th>
-												<th class="text-center">Técnico asignado</th> 
-												<th class="text-center">Estado</th> 
-												<th class="text-center"  colspan="3">Acciones</th> 
+												<th class="text-center" style="font: message-box">Cod. Req.</th>
+												<th class="text-center" style="font: message-box">Incidencia</th>
+												<th class="text-center" style="font: message-box">Área</th>
+												<th class="text-center" style="font: message-box">Usuario Emisor</th> 
+												<th class="text-center" style="font: message-box">Fecha Solicitud</th>
+												<th class="text-center" style="font: message-box">Prioridad</th> 
+												<th class="text-center" style="font: message-box">Estado</th> 
+												<th class="text-center" style="font: message-box" colspan="2">Acciones</th> 
 											</tr>
 										</thead> 
 										<tbody class="buscar" id="seguimientoData"> 
@@ -87,41 +87,49 @@
 													<td>231</td>
 													<td>No enciende la Pc. </td>
 													<td>Administrativa</td>
-													<td>Rosmery Luna</td>
+													<td>Carlo Aguirre</td>
 													<td>19/05/2018</td>
-													<td>No derivado</td>
+													<td style="background:#CEF6CE; color:#21610B">BAJA</td>
 													<td style="background:#F6CECE; color:#B40404">Pendiente</td>
-													<td><a title="Derivar Requerimiento" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-derivar" id="nueva-incidencia" ><i class="icon-wrench" style="color:blue"></i></a></td>
-													<td><a href=""  title="Visualizar levantamiento" type="button" class="btn btn-primary" disabled><i class="icon-eye" style="color:black" ></i></a></td>
-													<td><a href=""  title="Cerrar Requerimiento" type="button" class="btn btn-danger" disabled><i class="icon-pencil-square-o" style="color:black"></i></a></td>
+													<td><a title="Atender Incidencia" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-atender" id="nueva-incidencia" ><i class="icon-eye" style="color:black"></i></a></td>
+													<td><a href=""  title="Finalizar Atención" type="button" class="btn btn-danger" disabled><i class="icon-pencil-square-o" style="color:black"></i></a></td>
 												</tr>
-
 												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
-													<td>235</td>
-													<td>Se visualiza la pantalla negra. </td>
+													<td>232</td>
+													<td>Pantalla negra en la PC. </td>
 													<td>Administrativa</td>
-													<td>Adam Marquina</td>
-													<td>19/05/2018</td>
-													<td>Carlos Portal</td>
-													<td style="background:#F2F5A9; color:#B45F04">Derivado</td>
-													<td><a href=""  title="Derivar Requerimiento" type="button" class="btn btn-default" disabled><i class="icon-wrench" style="color:blue"></i></a></td>
-													<td><a href=""  title="Visualizar levantamiento" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-levantamiento" id="levantamiento" ><i class="icon-eye" style="color:black" ></i></a></td>
-													<td><a href=""  title="Cerrar Requerimiento" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-confirmacion" ><i class="icon-pencil-square-o" style="color:black"></i></a></td>
-												</tr>
-
-												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
-													<td>236</td>
-													<td>Problemas con la impresora. </td>
-													<td>Administrativa</td>
-													<td>Adam Marquina</td>
-													<td>19/05/2018</td>
-													<td>Ronald </td>
-													<td style="background:#CEF6CE; color:#21610B">Cerrado</td>
-													<td><a href=""  title="Derivar Requerimiento" type="button" class="btn btn-default" disabled><i class="icon-wrench" style="color:blue"></i></a></td>
-													<td><a href=""  title="Visualizar levantamiento" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-levantamiento" id="levantamiento" ><i class="icon-eye" style="color:black" ></i></a></td>
-													<td><a href=""  title="Cerrar Requerimiento" type="button" class="btn btn-danger" disabled><i class="icon-pencil-square-o" style="color:black"></i></a></td>
+													<td>Rosmery Luna</td>
+													<td>20/05/2018</td>
+													<td style="background:#F6CECE; color:#B40404">ALTA</td>
+													<td style="background:#F2F5A9; color:#B45F04">Abierto</td>
+													<td><a title="Atender Incidencia" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-atender" id="nueva-incidencia" disabled><i class="icon-eye" style="color:black"></i></a></td>
+													<td><a href=""  title="Finalizar Atención" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-confirmacion" id="confirmacion"><i class="icon-pencil-square-o" style="color:black"></i></a></td>
 												</tr>
 											
+
+												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
+													<td>233</td>
+													<td>Problemas en la impresora. </td>
+													<td>Docente</td>
+													<td>Carlos Portal </td>
+													<td>20/05/2018</td>
+													<td style="background:#F2F5A9; color:#B45F04">MEDIA</td>
+													<td style="background:#CEF6CE; color:#21610B">Resuelto</td>
+													<td><a title="Atender Incidencia" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-atender" id="nueva-incidencia" ><i class="icon-eye" style="color:black"></i></a></td>
+													<td><a href=""  title="Finalizar Atención" type="button" class="btn btn-danger" disabled><i class="icon-pencil-square-o" style="color:black"></i></a></td>
+												</tr>
+
+												<tr id="Mostrar_Tabla2" data-id="2" class="opciones">
+													<td>233</td>
+													<td>No funciona el teclado.</td>
+													<td>Administrativa</td>
+													<td>Adam Marquina</td>
+													<td>18/05/2018</td>
+													<td style="background:#F6CECE; color:#B40404">ALTA</td>
+													<td style="background:#CEF6CE; color:#21610B">Resuelto</td>
+													<td><a title="Atender Incidencia" type="button" class="btn btn-primary" disabled data-toggle="modal" data-target="#modal-atender" id="nueva-incidencia" ><i class="icon-eye" style="color:black" ></i></a></td>
+													<td><a href=""  title="Finalizar Atención" type="button" class="btn btn-danger" disabled><i class="icon-pencil-square-o" style="color:black"></i></a></td>
+												</tr>
 										</tbody> 
 									</table>
 								</div>
@@ -142,80 +150,13 @@
 	<br> 
 </footer>
 
-<div id="modal-derivar" class="modal fade" role="dialog">
+<div id="modal-atender" class="modal fade" role="dialog">
 	<div class=" modal-dialog modal-lg">
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close text-center" data-dismiss="modal">&times;</button>
-				<p class="title-card" style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px">DERIVAR REQUERIMIENTO</p>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div id="alert-crear-info" class="alert alert-warning alert-dismissible text-center" role="alert">
-							<button id="btn-close-alert-crear-info" type="button" class="close"><span aria-hidden="true">&times;</span></button>
-							<p style="font-size:14px">Asigna al técnico responsable para atender la incidencia </p>
-						</div>
-						<div id="alerta-errorCrear" class="alert alert-danger collapse text-center"></div>
-
-						<ul class="list-group">
-							<li class="list-group-item">
-								<div class="row">
-									
-									<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 " >
-										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>INCIDENCIA</strong></p>
-										<br>
-										<p style="font-size:14px; color:grey"><strong>Código de Incidencia :</strong> <span> INC - 12</span></p>
-										<p style="font-size:14px; color:grey"><strong>Descripción : </strong><span> No enciende la PC</span></p>
-										<p style="font-size:14px; color:grey"><strong>Área :</strong> <span> ADMINISTRATIVA </span></p>
-										<p style="font-size:14px; color:grey"><strong>Usuario :</strong> <span> Rosmery Luna </span></p>
-										
-									</div>
-
-									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 " >
-										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>TÉCNICO</strong></p>
-										
-										<select class="form-control" id="">
-											<option value="">--Seleccionar--</option>
-											<option value="0"> Kevin Hablutzel Pipa</option>
-											<option value="1"> Adam Marquina Lacuaña</option>
-											<option value="1"> Carlos Portal Bazan</option>
-											<option value="1"> Ronal Acuña</option>
-										</select>
-										<hr	>
-										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>PRIORIDAD</strong></p>
-										
-										<select class="form-control" id="">
-											<option value="">--Seleccionar--</option>
-											<option value="0">ALTA</option>
-											<option value="1" selected>MEDIA</option>
-											<option value="2">BAJA</option>
-										</select>							
-									</div>
-
-								</div>
-							</li>		
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-				<button id="btn-crear-horario" type="button" class="btn btn-danger" > Guardar </button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div id="modal-levantamiento" class="modal fade" role="dialog">
-	<div class=" modal-dialog modal-lg">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close text-center" data-dismiss="modal">&times;</button>
-				<p class="title-card" style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px">REQUERIMIENTO ATENDIDO</p>
+				<p class="title-card" style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px">LEVANTAMIENTO DE INCIDENCIAS</p>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -231,7 +172,7 @@
 								<div class="row">
 									
 									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 " style="font : message-box" >
-										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>INCIDENCIA</strong></p>
+										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>DETALLE DE INCIDENCIA</strong></p>
 										<br>
 										<p style="font-size:14px; color:grey"><strong>Código de Incidencia :</strong> <span> INC - 12</span></p>
 										<p style="font-size:14px; color:grey"><strong>Descripción : </strong><span> No enciende la PC</span></p>
@@ -239,18 +180,26 @@
 										<p style="font-size:14px; color:grey"><strong>Usuario :</strong> <span> Rosmery Luna </span></p>
 									</div>
 									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 " style="font : message-box" >
-										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>TÉCNICO ASIGNADO</strong></p>
-										<p style="font-size:16px; color:grey">Adam Marquina Lacuaña</span></p>
+										<br>
+										<p style="font-size:14px; color:grey"><strong>Prioridad </strong> BAJA </span></p>
 										<hr>
-										<p style="font-size:14px; color:grey"><strong>Fecha de Atención: </strong> 20/05/2018 </span></p>
-										<p style="font-size:14px; color:grey"><strong>Hora de Atención: </strong> 16:32 hrs </span></p>
-										<p style="font-size:14px; color:grey"><strong>Modalidad de Atención: </strong> Presencial </span></p>				
+										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>MODO DE ATENCIÓN</strong></p>
+										
+										<select class="form-control" id="">
+											<option value="">--Seleccionar--</option>
+											<option value="0">Remoto</option>
+											<option value="1">Presencial</option>
+											<option value="2">Vía Teléfono</option>
+											<option value="2">Otros</option>
+										</select>				
 									</div>
 								</div>
+
 								<div class="row">
+									<hr>
 									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-										<hr>
-										<textarea class="form-control" rows="2" readonly> La incidencia se atenció de manera presencial, se hizo el respectivo cambio del cable poder. </textarea>
+										<p style="color:#0B3861;font: message-box; font-weight:bold; font-size:16px" ><strong>DETALLE DEL LEVANTAMIENTO</strong></p>
+										<textarea class="form-control" rows="3" placeholder=" Pasos que realizó para levantar el requerimiento. "></textarea>
 									</div>
 								</div>
 							</li>		
@@ -261,6 +210,7 @@
 
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				<button id="btn-crear-horario" type="button" class="btn btn-danger" > Guardar</button>
 			</div>
 		</div>
 	</div>
@@ -304,6 +254,20 @@
 	function toggle(tableid){
 	  var id = jQuery(tableid).data('id')
 	  jQuery('#Tabla_Mostrar'+id).toggle();
+	}
+
+	/* MOSTRAR MENSAJE DE ALERTA */
+	function showAlertMessage(alert, mensaje){
+		$(alert).text(mensaje).show('fade');
+		setTimeout(function(){
+			hideAlertMessage(alert);	
+		}, 2000);
+	}
+
+	/* COULTAR ALERTA*/
+	function hideAlertMessage(alert){
+		$(alert).hide('fade');
+
 	}
 
 

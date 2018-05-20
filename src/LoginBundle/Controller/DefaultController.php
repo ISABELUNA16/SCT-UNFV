@@ -16,6 +16,11 @@ class DefaultController extends Controller
         return $this->render('LoginBundle:Default:usuario_principal.html.twig' );
     }
 
+    public function tecnicoPrincipalAction(){
+      
+        return $this->render('LoginBundle:Default:tecnico_principal.html.twig' );
+    }
+
     public function administradorPrincipalAction(){
 
     	return $this->render('LoginBundle:Default:admin_principal.html.twig');
@@ -26,4 +31,16 @@ class DefaultController extends Controller
         return $this->render('LoginBundle:Default:reportes.html.twig');
     }
 
+      public function atencionAction(){
+
+        return $this->render('LoginBundle:Default:atenciones.html.twig');
+    }
+
+    public function historialAction(){
+        return $this->render('LoginBundle:Default:historial.html.twig');
+    }
+   
+    public function atencionTecnicoAction(){
+        return $this->render('LoginBundle:Default:atencion_tecnico.html.twig');
+    }
 }
